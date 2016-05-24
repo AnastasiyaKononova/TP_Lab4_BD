@@ -222,7 +222,7 @@ int main(void) {
         }
                 break;
     
-        case '5':
+        case '5'://photo
         {
             FILE *fp = fopen("file.jpg", "wb");
     
@@ -277,54 +277,54 @@ int main(void) {
         }
                 break;
     
-        case '6':
+        case '6'://transaction
         {
     
     char sql[500] = "BEGIN TRANSACTION; INSERT INTO employees(firstname, secondname, lastname, birth, town, country, address, id, department, post, admission) values (";
     
     char buf[50];
     
-    fprintf(stdout, "Enter firstname: ");
+    fprintf(stdout, "firstname: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter secondname: ");
+    fprintf(stdout, "secondname: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter lastname: ");
+    fprintf(stdout, "lastname: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter birth: ");
+    fprintf(stdout, "birth: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter town: ");
+    fprintf(stdout, "town: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter country: ");
+    fprintf(stdout, "country: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter address: ");
+    fprintf(stdout, "address: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter id: ");
+    fprintf(stdout, "id: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, ", '");
-    fprintf(stdout, "Enter department: ");
+    fprintf(stdout, "department: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter post: ");
+    fprintf(stdout, "post: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "', '");
-    fprintf(stdout, "Enter admission: ");
+    fprintf(stdout, "admission: ");
     scanf("%s", buf);
     strcat(sql, buf);
     strcat(sql, "');COMMIT;");
@@ -342,12 +342,10 @@ int main(void) {
     }
         }
         break;
-    
-//autocommit
 
-        case '7':
+        case '7'://autocommit
         {
-            fprintf(stdout, "By default, SQLite version 3 operates in autocommit mode.\n");
+            fprintf(stdout, "By default, sqlite version 3 operates in autocommit mode.\n");
             printf("Autocommit: %d\n", sqlite3_get_autocommit(db));
     
             if(operation == 8)//stop
